@@ -22,11 +22,6 @@ jobs:
         run: npm run test:chrome
         continue-on-error: true
 
-      - name: Copy test execution videos
-        run: |
-          mkdir public
-          cp -r cypress/videos public/videos
-
       - name: Merge test results into one
         run: npm run report:merge
 

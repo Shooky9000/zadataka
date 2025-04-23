@@ -8,6 +8,7 @@ export default defineConfig({
   videoCompression: 15,
   e2e: {
     baseUrl: "https://staging-rating.scoopandgo.app",
+    video: true,
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },

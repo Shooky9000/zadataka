@@ -1,0 +1,263 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 9,
+    "passes": 8,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-04-23T16:12:21.575Z",
+    "end": "2025-04-23T16:12:46.265Z",
+    "duration": 24690,
+    "testsRegistered": 9,
+    "passPercent": 88.88888888888889,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "afe8bbe1-0767-4157-b8d3-2ff1bb9da968",
+      "title": "",
+      "fullFile": "cypress\\e2e\\rateportal.cy.ts",
+      "file": "cypress\\e2e\\rateportal.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c43130c6-dceb-48d4-a05b-7046e8b269eb",
+          "title": "Rate your field tech test cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC01 - Should select star five",
+              "fullTitle": "Rate your field tech test cases TC01 - Should select star five",
+              "timedOut": null,
+              "duration": 3149,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\rateportal.cy.ts\"\n  },\n  \"videos/rateportal.cy.ts.mp4\"\n]",
+              "code": "cy.get(\".v-rating button\").eq(4).click();\ncy.get(\".mx-auto.px-2.text-caption\").should(\"have.text\", \"5 - Awesome\");",
+              "err": {},
+              "uuid": "469fc0aa-deb8-4738-8888-31968c7601c3",
+              "parentUUID": "c43130c6-dceb-48d4-a05b-7046e8b269eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC02 - Should leave a valid comment",
+              "fullTitle": "Rate your field tech test cases TC02 - Should leave a valid comment",
+              "timedOut": null,
+              "duration": 1524,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\rateportal.cy.ts\"\n  },\n  \"videos/rateportal.cy.ts.mp4\"\n]",
+              "code": "cy.contains(\"div\", \"Leave a comment\").click();\ncy.get(\"textarea#input-33\").type(\"Great comment!!\").should(\"have.value\", \"Great comment!!\");",
+              "err": {},
+              "uuid": "9e51e864-42dc-4d14-a571-42d8943286a1",
+              "parentUUID": "c43130c6-dceb-48d4-a05b-7046e8b269eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC03 - Should show an error when comment exceeds 500 characters",
+              "fullTitle": "Rate your field tech test cases TC03 - Should show an error when comment exceeds 500 characters",
+              "timedOut": null,
+              "duration": 7398,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\rateportal.cy.ts\"\n  },\n  \"videos/rateportal.cy.ts.mp4\"\n]",
+              "code": "var longComment = \"a\".repeat(502);\ncy.contains(\"div\", \"Leave a comment\").click();\ncy.get(\"textarea#input-33\").type(longComment).should(\"have.value\", longComment);\ncy.get(\".v-counter.error--text.theme--light\").should(\"contain\", \"502 / 500\");",
+              "err": {},
+              "uuid": "a7db637f-d73f-4cc3-801d-2a928de187ad",
+              "parentUUID": "c43130c6-dceb-48d4-a05b-7046e8b269eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC04 - Should select a $5 tip",
+              "fullTitle": "Rate your field tech test cases TC04 - Should select a $5 tip",
+              "timedOut": null,
+              "duration": 1580,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\rateportal.cy.ts\"\n  },\n  \"videos/rateportal.cy.ts.mp4\"\n]",
+              "code": "cy.get(\".pointer.text-decoration-underline\").contains(\"Leave a tip\").click();\ncy.contains(\".v-chip\", \"$ 5\").click().should(\"not.have.class\", \"v-chip--outlined\").should(\"not.have.class\", \"primary--text\");",
+              "err": {},
+              "uuid": "3ec38d0e-1ad7-4215-9777-37ea9e238c95",
+              "parentUUID": "c43130c6-dceb-48d4-a05b-7046e8b269eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC05 - Should clear tips if star is downgraded",
+              "fullTitle": "Rate your field tech test cases TC05 - Should clear tips if star is downgraded",
+              "timedOut": null,
+              "duration": 5302,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\rateportal.cy.ts\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\rateportal.cy.ts\\\\Rate your field tech test cases -- TC05 - Should clear tips if star is downgraded (failed).png\"\n      ]\n    ]\n  },\n  \"videos/rateportal.cy.ts.mp4\"\n]",
+              "code": "cy.get(\".v-rating button\").eq(4).click(); // Click on the 5th star\ncy.get(\".v-rating button\").eq(0).click(); // Click on the 1st star\ncy.get(\".pt-5.pb-4\").should(\"not.exist\"); // Assert that the tip container with class pt-5.pb-4 does not exist",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected <div.pt-5.pb-4> not to exist in the DOM, but it was continuously found.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected <div.pt-5.pb-4> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack://zadatak/./cypress/e2e/rateportal.cy.ts:33:29)",
+                "diff": null
+              },
+              "uuid": "07dc7824-d2d7-4551-ae4a-8bc3fcd55f9b",
+              "parentUUID": "c43130c6-dceb-48d4-a05b-7046e8b269eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC06 - Should show required error on empty 'Other' tip'",
+              "fullTitle": "Rate your field tech test cases TC06 - Should show required error on empty 'Other' tip'",
+              "timedOut": null,
+              "duration": 1544,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\rateportal.cy.ts\"\n  },\n  \"videos/rateportal.cy.ts.mp4\"\n]",
+              "code": "cy.get(\".pointer.text-decoration-underline\").contains(\"Leave a tip\").click();\ncy.contains(\".v-chip\", \"Other\").click();\ncy.contains(\"button\", \"Ok\").click();\ncy.get(\".v-messages__message\").should(\"contain.text\", \"This field is required\");",
+              "err": {},
+              "uuid": "4967814f-4739-4c92-b56d-de5140c3c271",
+              "parentUUID": "c43130c6-dceb-48d4-a05b-7046e8b269eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC07 - Should show error for non-numeric 'Other' tip",
+              "fullTitle": "Rate your field tech test cases TC07 - Should show error for non-numeric 'Other' tip",
+              "timedOut": null,
+              "duration": 1397,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\rateportal.cy.ts\"\n  },\n  \"videos/rateportal.cy.ts.mp4\"\n]",
+              "code": "cy.get(\".pointer.text-decoration-underline\").contains(\"Leave a tip\").click();\ncy.contains(\".v-chip\", \"Other\").click();\ncy.get(\"#input-45\").clear().type(\"asd\");\ncy.contains(\"button\", \"Ok\").click();\ncy.get(\".v-messages__message\").should(\"contain.text\", \"Must be a number\");",
+              "err": {},
+              "uuid": "962c1d3e-6d2f-41f0-b533-4b6122521d7f",
+              "parentUUID": "c43130c6-dceb-48d4-a05b-7046e8b269eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC08 - Should accept numeric 'Other' tip",
+              "fullTitle": "Rate your field tech test cases TC08 - Should accept numeric 'Other' tip",
+              "timedOut": null,
+              "duration": 1397,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\rateportal.cy.ts\"\n  },\n  \"videos/rateportal.cy.ts.mp4\"\n]",
+              "code": "cy.get(\".pointer.text-decoration-underline\").contains(\"Leave a tip\").click();\ncy.contains(\".v-chip\", \"Other\").click();\ncy.get(\"#input-45\").clear().type(\"50\");\ncy.contains(\"button\", \"Ok\").click();\ncy.get(\".v-chip.v-chip--removable\").should(\"have.length\", 1).should(\"contain.text\", \"$ 50\");",
+              "err": {},
+              "uuid": "cf80d13a-4d06-43bd-8dbd-1f1190f297c2",
+              "parentUUID": "c43130c6-dceb-48d4-a05b-7046e8b269eb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC09 - Should select the recurring tip checkbox and verify it is checked",
+              "fullTitle": "Rate your field tech test cases TC09 - Should select the recurring tip checkbox and verify it is checked",
+              "timedOut": null,
+              "duration": 1166,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress\\\\e2e\\\\rateportal.cy.ts\"\n  },\n  \"videos/rateportal.cy.ts.mp4\"\n]",
+              "code": "cy.get(\".pointer.text-decoration-underline\").contains(\"Leave a tip\").click();\ncy.get(\"#input-39\").check({ force: true });\ncy.get(\"#input-39\").should(\"be.checked\");",
+              "err": {},
+              "uuid": "53a2f3f1-5f6f-409a-8dbb-3cc0cc679068",
+              "parentUUID": "c43130c6-dceb-48d4-a05b-7046e8b269eb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "469fc0aa-deb8-4738-8888-31968c7601c3",
+            "9e51e864-42dc-4d14-a571-42d8943286a1",
+            "a7db637f-d73f-4cc3-801d-2a928de187ad",
+            "3ec38d0e-1ad7-4215-9777-37ea9e238c95",
+            "4967814f-4739-4c92-b56d-de5140c3c271",
+            "962c1d3e-6d2f-41f0-b533-4b6122521d7f",
+            "cf80d13a-4d06-43bd-8dbd-1f1190f297c2",
+            "53a2f3f1-5f6f-409a-8dbb-3cc0cc679068"
+          ],
+          "failures": [
+            "07dc7824-d2d7-4551-ae4a-8bc3fcd55f9b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 24457,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/json",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

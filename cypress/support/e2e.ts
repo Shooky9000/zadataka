@@ -15,3 +15,15 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import 'cypress-mochawesome-reporter/register';
+
+const addContext = require("mochawesome/addContext.js");
+
+Cypress.on("test:after:run", function(test, runnable) {
+    
+    var videoName = Cypress.spec.name;
+    videoName = videoName.replace('/.cy.ts.*', '.ts');
+    var videoUrl = 'videos/' + videoName + '.mp4';
+
+    addContext({ test: test }, videoUrl);
+});

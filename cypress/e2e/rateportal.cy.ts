@@ -55,4 +55,10 @@ describe("Rate your field tech test cases", ()=> {
         cy.contains("button", "Ok").click();
         cy.get(".v-chip.v-chip--removable").should("have.length", 1).should("contain.text", "$ 50");
     });
+
+    it("TC09 - Should select the recurring tip checkbox and verify it is checked", () => {
+        cy.get(".pointer.text-decoration-underline").contains("Leave a tip").click();
+        cy.get("#input-39").check({ force: true });
+        cy.get("#input-39").should("be.checked");
+      });
 });
